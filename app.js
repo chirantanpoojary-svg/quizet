@@ -169,7 +169,8 @@ async function submitAnswer() {
     let ans = document.getElementById("answer").value.trim()
     if (!ans) ans = "WRONG"
     stopTimer = true
-    document.getElementById("answer").disabled = true
+    const input = document.getElementById("answer")
+    input.disabled = true
     document.getElementById("submit").disabled = true
     let payload = {session_id: state.session_id, answer: ans, token: state.token}
     try {
@@ -190,11 +191,13 @@ async function submitAnswer() {
             return
         }
         document.getElementById("status").innerText = "Answer recorded"
+        input.value = ""  // <-- reset input box here
         setTimeout(getQuestion, 1200)
     } catch(e) {
         document.getElementById("status").innerText = "Error submitting answer"
     }
 }
+
 
 function countdown(sec) {
     let lbl = document.getElementById("timer")
@@ -251,3 +254,4 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
