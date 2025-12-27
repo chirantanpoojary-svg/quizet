@@ -17,10 +17,16 @@ window.onresize = resizeBg
 
 setInterval(resizeBg, 1000)
 
+document.body.style.fontFamily = "Times New Roman"
+
 fontToggle.onchange = () => {
-    if (!fontToggle.checked) document.body.style.fontFamily = "Times New Roman"
-    else document.body.style.fontFamily = "Dancing"
+    if (fontToggle.checked) {
+        document.body.style.fontFamily = "Dancing"
+    } else {
+        document.body.style.fontFamily = "Times New Roman"
+    }
 }
+
 
 function clear() {
     app.innerHTML = ""
@@ -254,5 +260,6 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
