@@ -259,7 +259,7 @@ document.onvisibilitychange = () => {
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({username:state.username, code:c})
         })
-        if (foc >= 2) {
+        if (foc >= 3) {
             home()
             foc = 0
         }
@@ -268,6 +268,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
