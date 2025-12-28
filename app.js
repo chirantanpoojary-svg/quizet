@@ -68,6 +68,7 @@ function loginScreen() {
 }
 
 function home() {
+    if(!state.username) loginScreen()
     clear()
     app.innerHTML = `
         <div style="font-size:24px;">Welcome ${state.username}</div>
@@ -255,11 +256,15 @@ document.onvisibilitychange = () => {
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify({username:state.username, code:c})
         })
-        if (foc >= 2) home()
+        if (foc >= 2) {
+            home()
+            foc = 0
+        }
     }
 }
 
 loginScreen()
+
 
 
 
