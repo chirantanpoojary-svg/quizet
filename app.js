@@ -93,6 +93,7 @@ function joinQuiz() {
     inQ = false
     app.innerHTML = `
         <div style="font-size:20px;">Enter 6-digit quiz code and 12-char code</div>
+        <img src="assets/logo.png" style="width:40px;height:40px;opacity:.4">
         <input id="six" placeholder="6-digit code">
         <input id="twelve" placeholder="12-char access code">
         <button id="joinBtn">Join</button>
@@ -139,6 +140,7 @@ async function quiz() {
     inQ = true
     app.innerHTML = `
         <div id="q" style="font-size:22px;">Getting question...</div>
+        <img src="assets/logo.png" style="width:40px;height:40px;opacity:.4">
         <input id="answer" placeholder="Type answer">
         <button id="submit">Submit</button>
         <div id="timer" style="margin-top:12px;font-size:18px;"></div>
@@ -274,6 +276,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
