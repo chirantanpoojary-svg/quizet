@@ -260,10 +260,12 @@ document.onvisibilitychange = () => {
             home()
             foc = 0
         }
+        else alert("Warning no leaving quiz page!!")
     }
 }
 
 loginScreen()
+
 
 
 
