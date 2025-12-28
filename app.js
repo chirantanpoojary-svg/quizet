@@ -3,6 +3,7 @@ let state = {session_id: null, username: null, phone: null, token: null, expiry:
 let c = ""
 let foc = 0
 let stopTimer = false
+let inQ = false
 
 const app = document.getElementById("app")
 const bg = document.getElementById("bg")
@@ -33,6 +34,7 @@ function clear() {
 }
 
 function loginScreen() {
+    inQ = false
     clear()
     app.innerHTML = `
         <h1 style="font-size:32px;">QUIZET</h1>
@@ -72,6 +74,7 @@ function home() {
         loginScreen()
         return
     }
+    inQ = false
     clear()
     app.innerHTML = `
         <div style="font-size:24px;">Welcome ${state.username}</div>
@@ -87,6 +90,7 @@ function home() {
 
 function joinQuiz() {
     clear()
+    inQ = false
     app.innerHTML = `
         <div style="font-size:20px;">Enter 6-digit quiz code and 12-char code</div>
         <input id="six" placeholder="6-digit code">
@@ -132,6 +136,7 @@ function joinQuiz() {
 
 async function quiz() {
     clear()
+    inQ = true
     app.innerHTML = `
         <div id="q" style="font-size:22px;">Getting question...</div>
         <input id="answer" placeholder="Type answer">
@@ -253,6 +258,7 @@ async function autoWrong() {
 
 document.onvisibilitychange = () => {
     if (document.visibilityState === "visible") {
+        if(!inQ) return
         foc++
         fetch(SERVER+"/ping", {
             method:"POST",
@@ -268,6 +274,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
