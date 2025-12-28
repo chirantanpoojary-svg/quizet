@@ -78,6 +78,7 @@ function home() {
     clear()
     app.innerHTML = `
         <div style="font-size:24px;">Welcome ${state.username}</div>
+        <img src="assets/logo.png" style="width:40px;height:40px;opacity:.4">
         <button id="join">Join Quiz</button>
         <button id="logout">Logout</button>
     `
@@ -276,6 +277,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
