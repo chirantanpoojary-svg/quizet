@@ -68,7 +68,10 @@ function loginScreen() {
 }
 
 function home() {
-    if(state.username == null) loginScreen()
+    if(state.username == null){
+        loginScreen()
+        return
+    }
     clear()
     app.innerHTML = `
         <div style="font-size:24px;">Welcome ${state.username}</div>
@@ -265,6 +268,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
