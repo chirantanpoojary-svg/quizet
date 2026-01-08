@@ -3,6 +3,13 @@
     src: url("assets/DancingScript-Regular.ttf");
 }
 
+* {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -58,3 +65,4 @@ button {
     width: 20px;
     height: 20px;
 }
+
