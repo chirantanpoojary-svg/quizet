@@ -105,8 +105,8 @@ function joinQuiz() {
     document.getElementById("joinBtn").onclick = async () => {
         let six = document.getElementById("six").value.trim()
         let access = document.getElementById("twelve").value.trim()
-        if (!six || !access) {
-            document.getElementById("msg").innerText = "Enter both codes"
+        if (!six) {
+            document.getElementById("msg").innerText = "Enter entrance code"
             return
         }
         let payload = {
@@ -277,6 +277,7 @@ document.onvisibilitychange = () => {
 }
 
 loginScreen()
+
 
 
 
